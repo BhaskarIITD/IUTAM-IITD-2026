@@ -13,8 +13,7 @@
 /* SPLIT HERO */
 .hero-split {
   display: flex;
-  height: 70vh;
-  min-height: 520px;
+  height: clamp(520px, 70vh, 760px);
   background: white;
   margin-bottom: 1.2rem;
 }
@@ -24,6 +23,7 @@
   flex: 7.5;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* RIGHT PANEL — 25% */
