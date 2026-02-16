@@ -1,0 +1,54 @@
+/* PAGE WRAPPER */
+.about-page {
+  background: #f7f9fc;
+  padding-bottom: 4rem;
+}
+
+/* HEADER */
+.about-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.about-header h1 {
+  font-size: 2.4rem;
+  color: #0b2239;
+  margin-bottom: 0.6rem;
+}
+
+.about-header h2 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #1c4d7a;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* CONTENT */
+.about-content {
+  width: min(900px, 92%);
+  margin: auto;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #333;
+}
+
+.about-content p {
+  margin-bottom: 1.6rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-content {
+    font-size: 1.02rem;
+  }
+}

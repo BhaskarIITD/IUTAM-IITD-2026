@@ -27,9 +27,9 @@ const Navbar = () => {
       {/* CENTER — Links */}
       <nav className="nav-center">
         <Link to="/">Home</Link>
-        <Link to="/programme">Program</Link>
-        <Link to="/delegates">Speakers</Link>
-        <Link to="/accommodation">Travel & Stay</Link>
+        <Link to="/programme-details">Programme Details</Link>
+        <Link to="/travel-and-accomodation">Travel & Accomodation</Link>
+        <Link to="/about">About</Link>
 
         {!user && (
           <Link to="/registration">Registration</Link>

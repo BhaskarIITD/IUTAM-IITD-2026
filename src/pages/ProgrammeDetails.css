@@ -1,0 +1,132 @@
+/* PAGE WRAPPER */
+.programme-page {
+  background: #f7f9fc;
+  padding-bottom: 4rem;
+}
+
+/* HEADER */
+.programme-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.programme-header h1 {
+  font-size: 2.4rem;
+  color: #0b2239;
+}
+
+/* MAIN LAYOUT */
+.programme-content {
+  width: min(1200px, 92%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+}
+
+/* LEFT COLUMN */
+.programme-left section {
+  margin-bottom: 3rem;
+}
+
+.programme-left h2 {
+  font-size: 1.6rem;
+  color: #1c4d7a;
+  margin-bottom: 1.2rem;
+}
+
+/* SCIENTIFIC COMMITTEE */
+.committee-list {
+  list-style: none;
+  padding: 0;
+}
+
+.committee-item {
+  margin-bottom: 1rem;
+}
+
+.committee-name {
+  font-weight: 600;
+  color: #0b2239;
+}
+
+.committee-role {
+  font-weight: 600;
+  color: #1c4d7a;
+}
+
+.committee-meta {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+/* SPEAKERS */
+.speakers-list {
+  list-style: none;
+  padding: 0;
+}
+
+.speaker-item {
+  margin-bottom: 0.9rem;
+}
+
+.speaker-name {
+  font-weight: 500;
+  color: #0b2239;
+}
+
+.speaker-meta {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* RIGHT COLUMN */
+.programme-right {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.programme-right h2 {
+  font-size: 1.6rem;
+  color: #1c4d7a;
+  margin-bottom: 1.5rem;
+}
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  padding-left: 1.2rem;
+  border-left: 3px solid #1c4d7a;
+}
+
+.timeline-item .day {
+  display: block;
+  font-weight: 600;
+  color: #0b2239;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .programme-content {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-right {
+    margin-top: 2rem;
+  }
+}

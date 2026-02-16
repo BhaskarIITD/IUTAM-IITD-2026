@@ -6,7 +6,9 @@ import Login from './pages/Login';
 import Registration from './pages/Registration';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
-import { Programme, Delegates, Accommodation, Transport } from './pages/ContentPages';
+import TravelAndAccomodation from './pages/TravelAndAccomodation';
+import ProgrammeDetails from './pages/ProgrammeDetails';
+import About from './pages/About';
 
 function App() {
   return (
@@ -16,10 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/programme" element={<Programme />} />
-          <Route path="/delegates" element={<Delegates />} />
-          <Route path="/accommodation" element={<Accommodation />} />
-          <Route path="/transport" element={<Transport />} />
+          <Route path="/programme-details" element={<ProgrammeDetails />} />
+          <Route path="/travel-and-accomodation" element={<TravelAndAccomodation />} />
+          <Route path="/about" element={<About />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
