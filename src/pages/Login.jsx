@@ -31,6 +31,7 @@ const Login = () => {
         navigate('/'); // Or a user dashboard
       }
     } catch (err) {
+      console.error("FULL ERROR DETAILS:", err); // <--- ADD THIS LINE
       setError(err.response?.data?.message || 'Login failed');
     } finally {
       setIsLoading(false);
