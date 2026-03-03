@@ -1,60 +1,33 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// Navbar.jsx
+import { NavLink, Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/IUTAM-Logo-Site-.png';
+import iutamLogo from '../assets/IUTAM-Logo-Site-.png';
+import iitdLogo from '/iitd-logo-black.png'; // Added IITD Logo
 
 const Navbar = () => {
-  const navigate = useNavigate();
-
-  const token = localStorage.getItem('token');
-  const user = JSON.parse(localStorage.getItem('user'));
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    navigate('/login');
-  };
-
   return (
     <header className="navbar">
-      {/* LEFT — Logo */}
+      
+      {/* LEFT — Logos */}
       <div className="nav-left">
         <Link to="/" className="logo-wrap">
-          <img src={logo} alt="IUTAM Logo" />
+          <img src={iitdLogo} alt="IIT Delhi Logo" className="iitd-logo" />
+          <div className="logo-divider"></div> {/* Clean separator between logos */}
+          <img src={iutamLogo} alt="IUTAM Logo" className="iutam-logo" />
         </Link>
       </div>
 
-      {/* CENTER — Links */}
+      {/* CENTER — Links (Upgraded to NavLink for active state styling) */}
       <nav className="nav-center">
-        <Link to="/">Home</Link>
-        <Link to="/programme-details">Programme Details</Link>
-        <Link to="/travel-and-accomodation">Travel & Accomodation</Link>
-        <Link to="/about">About</Link>
-
-        {!user && (
-          <Link to="/registration">Registration</Link>
-        )}
-
-        {user && <Link to="/dashboard">Dashboard</Link>}
-        {user && user.role === 'ADMIN' && (
-          <Link to="/admin">Admin</Link>
-        )}
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/scientific-committee">Scientific Committee</NavLink>
+        <NavLink to="/programme-details">Schedule</NavLink>
+        <NavLink to="/speakers">Speakers</NavLink>
+        <NavLink to="/registration">Registration</NavLink>
+        <NavLink to="/travel-and-accomodation">Travel & Accommodation</NavLink>
       </nav>
 
-      {/* RIGHT — Auth / CTA */}
-      <div className="nav-right">
-        {token ? (
-          <button className="btn-outline" onClick={handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <>
-            <Link to="/login" className="btn-outline">
-              Login
-            </Link>
-          </>
-        )}
-      </div>
     </header>
   );
 };

@@ -1,14 +1,14 @@
-import React from 'react';
+// App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Login from './pages/Login';
 import Registration from './pages/Registration';
-import UserDashboard from './pages/UserDashboard';
-import AdminDashboard from './pages/AdminDashboard';
 import TravelAndAccomodation from './pages/TravelAndAccomodation';
 import ProgrammeDetails from './pages/ProgrammeDetails';
 import About from './pages/About';
+import Speakers from './pages/Speakers';
+import ScientificCommittee from './pages/ScientificCommittee'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -17,14 +17,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/speakers" element={<Speakers />} />
           <Route path="/programme-details" element={<ProgrammeDetails />} />
+          <Route path="/scientific-committee" element={<ScientificCommittee />} />
           <Route path="/travel-and-accomodation" element={<TravelAndAccomodation />} />
           <Route path="/about" element={<About />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/dashboard" element={<UserDashboard />} />
-          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
+        <Contact />
       </div>
     </Router>
   );

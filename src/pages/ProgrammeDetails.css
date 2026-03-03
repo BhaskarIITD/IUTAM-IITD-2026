@@ -1,7 +1,10 @@
+/* ProgrammeDetails.css */
+
 /* PAGE WRAPPER */
 .programme-page {
   background: #f7f9fc;
   padding-bottom: 4rem;
+  min-height: 100vh;
 }
 
 /* HEADER */
@@ -15,118 +18,203 @@
   color: #0b2239;
 }
 
-/* MAIN LAYOUT */
+.programme-header p {
+  color: #1c4d7a;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+/* MAIN LAYOUT (Single Centered Column) */
 .programme-content {
-  width: min(1200px, 92%);
+  width: min(900px, 92%);
   margin: auto;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
 }
 
-/* LEFT COLUMN */
-.programme-left section {
-  margin-bottom: 3rem;
+/* TABS NAVIGATION */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-.programme-left h2 {
-  font-size: 1.6rem;
+.tab-button {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  color: #555;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background: #f0f4f8;
+  color: #1c4d7a;
+}
+
+.tab-button.active {
+  background: #1c4d7a;
+  color: #ffffff;
+  border-color: #1c4d7a;
+  box-shadow: 0 6px 15px rgba(28, 77, 122, 0.2);
+}
+
+/* CARDS & ANIMATION */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card h2 {
+  font-size: 1.4rem;
   color: #1c4d7a;
   margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #eef2f7;
 }
 
-/* SCIENTIFIC COMMITTEE */
-.committee-list {
-  list-style: none;
+/* EVENT LIST (SCHEDULE) */
+.event-list {
+  list-style: none; /* Removes default bullets */
   padding: 0;
-}
-
-.committee-item {
-  margin-bottom: 1rem;
-}
-
-.committee-name {
-  font-weight: 600;
-  color: #0b2239;
-}
-
-.committee-role {
-  font-weight: 600;
-  color: #1c4d7a;
-}
-
-.committee-meta {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.2rem;
-}
-
-/* SPEAKERS */
-.speakers-list {
-  list-style: none;
-  padding: 0;
-}
-
-.speaker-item {
-  margin-bottom: 0.9rem;
-}
-
-.speaker-name {
-  font-weight: 500;
-  color: #0b2239;
-}
-
-.speaker-meta {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* RIGHT COLUMN */
-.programme-right {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-.programme-right h2 {
-  font-size: 1.6rem;
-  color: #1c4d7a;
-  margin-bottom: 1.5rem;
-}
-
-/* TIMELINE */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.timeline-item {
-  padding-left: 1.2rem;
-  border-left: 3px solid #1c4d7a;
-}
-
-.timeline-item .day {
-  display: block;
-  font-weight: 600;
-  color: #0b2239;
-  margin-bottom: 0.3rem;
-}
-
-.timeline-item p {
   margin: 0;
-  color: #444;
-  line-height: 1.5;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .programme-content {
-    grid-template-columns: 1fr;
-  }
+/* Add a sleek hover effect to rows */
+.event-item {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #eef2f7;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
-  .programme-right {
-    margin-top: 2rem;
+.event-item:hover {
+  background-color: #f8fafc;
+  transform: translateX(4px); /* Slight nudge on hover */
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+/* Flexbox layout for Time vs Details */
+.event-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Centers the time pill with the text */
+}
+
+/* Turn times into distinct badges */
+.event-time {
+  min-width: 135px;
+  background: #edf2f9;
+  color: #1c4d7a;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #e3e8ef;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-title {
+  font-weight: 600;
+  color: #0b2239;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* Speaker formatting */
+.speaker-name {
+  font-weight: 700;
+  color: #0b2239;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.talk-topic {
+  font-size: 0.95rem;
+  color: #1c4d7a; /* Make the topic blue to contrast the black speaker name */
+  line-height: 1.4;
+}
+
+/* --- BREAK & MEAL STYLING --- */
+/* Mutes the breaks so the academic talks stand out more */
+.event-item.break-session {
+  background-color: #fbfcfd;
+  border-left: 3px solid #d1d9e6;
+  border-radius: 0 8px 8px 0;
+}
+
+.event-item.break-session:hover {
+  background-color: #f0f4f8;
+}
+
+.event-item.break-session .event-time {
+  background: transparent;
+  color: #6b7a90;
+  border-color: transparent;
+  text-align: left;
+  padding-left: 0;
+}
+
+.event-item.break-session .event-title {
+  color: #6b7a90;
+  font-weight: 500;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .tabs-container {
+    gap: 0.4rem;
+  }
+  
+  .tab-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    flex: 1 1 45%; /* Makes tabs 2-by-2 on mobile screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .event-row {
+    flex-direction: column; /* Stacks Time above Title on very small screens */
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+  
+  .event-time {
+    color: #1c4d7a;
+    font-size: 0.85rem;
+    min-width: auto;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .event-item {
+    padding: 1rem 0.5rem;
   }
 }

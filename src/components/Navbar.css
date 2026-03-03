@@ -2,78 +2,100 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 2.5rem;
+  /* Removed justify-content: space-between to allow manual centering */
+  padding: 0.8rem 3rem;
   background: #ffffff;
-  border-bottom: 1px solid #e6e6e6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* LEFT — LOGO */
-.logo-wrap img {
-  height: 44px;
+/* LEFT — LOGOS */
+.nav-left {
+  flex-shrink: 0; /* Prevents logos from being squished */
+}
+
+.logo-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+}
+
+.iitd-logo {
+  height: 75px;
   width: auto;
   object-fit: contain;
 }
 
-/* CENTER — LINKS */
+.iutam-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-divider {
+  height: 35px;
+  width: 1px;
+  background-color: #e0e0e0;
+  margin: 0 0.2rem;
+}
+
+/* CENTER — LINKS (The Fix is here) */
 .nav-center {
+  flex: 1; /* Takes up all available space */
   display: flex;
-  gap: 2.2rem;
-  align-items: center;
+  justify-content: center; /* Centers the tabs within that space */
+  gap: 1.8rem;
+  padding-right: 150px; /* Offset to compensate for logo width and achieve true page centering */
 }
 
 .nav-center a {
   text-decoration: none;
-  color: #173a5e;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.25s ease;
-}
-
-.nav-center a:hover {
-  color: #0b2239;
-}
-
-/* RIGHT SIDE */
-.nav-right {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-/* PRIMARY BUTTON */
-.btn-primary {
-  background: #1c4d7a;
-  color: white;
-  padding: 0.55rem 1.4rem;
-  text-decoration: none;
-  border-radius: 4px;
+  color: #556b82;
   font-weight: 600;
-  transition: all 0.25s ease;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
-.btn-primary:hover {
-  background: #163d62;
-}
-
-/* OUTLINE BUTTON */
-.btn-outline {
-  border: 1px solid #1c4d7a;
+.nav-center a:hover,
+.nav-center a.active {
   color: #1c4d7a;
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
-  background: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
 }
 
-.btn-outline:hover {
-  background: #1c4d7a;
-  color: white;
+/* Underline Animation */
+.nav-center a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1c4d7a;
+  transition: width 0.3s ease;
+}
+
+.nav-center a:hover::after,
+.nav-center a.active::after {
+  width: 100%;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1100px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .nav-center {
+    padding-right: 0; /* Remove offset on mobile/tablet stacks */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

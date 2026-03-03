@@ -1,3 +1,5 @@
+/* Home.css */
+
 /* GLOBAL STRUCTURE */
 .home {
   background: #f7f9fc;
@@ -10,100 +12,184 @@
   padding: 2.2rem 0;
 }
 
-/* SPLIT HERO */
+/* =========================================
+   1. HERO SECTION 
+   ========================================= */
 .hero-split {
   display: flex;
-  height: 85vh;
-  min-height: 520px;
+  height: calc(100vh - 75px); 
+  min-height: 550px; 
+  max-height: 850px; 
   background: white;
   margin-bottom: 1.2rem;
+  align-items: stretch; 
+  overflow: hidden; 
 }
 
-/* LEFT IMAGE — 75% */
+/* LEFT IMAGE */
 .hero-left {
-  flex: 7.5;
+  flex: 7; 
   background-size: cover;
   background-position: center;
 }
 
-/* RIGHT PANEL — 25% */
+/* RIGHT PANEL */
 .hero-right {
-  flex: 2.5;
-  position: relative;
+  flex: 3;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 3rem 2.8rem;
+  justify-content: space-between; 
+  padding: 2.5rem 3rem; 
   background: #f9fbfd;
+  border-left: 1px solid #eef2f7; 
+  overflow-y: auto; 
 }
 
-/* TOP RIGHT LOGO */
-.hero-logo-top {
-  position: absolute;
-  top: 20px;
-  right: 80px;
-}
-
-.hero-logo-top img {
-  width: 250px;
-}
-
-/* EVENT LABEL */
+/* HERO TEXT FORMATTING */
 .hero-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   font-weight: 600;
   color: #1c4d7a;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
-/* DIVIDER */
 .hero-divider {
-  width: 42px;
+  width: 40px;
   height: 3px;
   background: #1c4d7a;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
 }
 
-/* TITLE */
 .hero-topic {
-  font-size: 1.7rem;
-  font-weight: 600;
-  line-height: 1.35;
+  font-size: 1.7rem; 
+  font-weight: 700;
+  line-height: 1.3;
   color: #0b2239;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-/* LOCATION */
 .hero-date {
-  font-size: 1.02rem;
-  color: #1c4d7a;
+  font-size: 1rem;
+  color: #556b82;
   font-weight: 500;
   line-height: 1.5;
 }
 
-
-/* BANNER */
-.banner {
-  background: white;
-  padding: 3rem 0;
+/* CTA BUTTON */
+.hero-cta {
+  margin-top: 1.5rem; 
 }
 
-.banner h2 {
-  font-size: 4.2rem;
+.cta-register {
+  display: inline-block;
+  background: #1c4d7a;
+  color: white;
+  padding: 0.75rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-register:hover {
+  background: #0b2239;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   2. RIGHT PANEL SECTIONS (Chairs & Dates)
+   ========================================= */
+.sidebar-title {
+  font-size: 1rem;
+  color: #1c4d7a;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* CHAIRS (Moved up beneath button) */
+.chairs-section {
+  margin-top: 1.5rem;
+}
+
+.chair-item {
+  margin-bottom: 0.0rem; 
+}
+
+.chair-item strong {
+  font-size: 1rem;
   color: #0b2239;
 }
 
-.title {
-  font-weight: bolder;
+.chair-role {
+  font-size: 0.9rem;
+  color: #1c4d7a;
+  font-weight: 500;
 }
 
-/* SPLIT SECTION */
+.chair-inst {
+  font-size: 0.85rem;
+  color: #6b7a90;
+  margin-top: 0.1rem;
+}
+
+/* IMPORTANT DATES (Anchored to bottom) */
+.hero-bottom-group {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.tba-text {
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+  background: #f0f4f8;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #1c4d7a;
+  display: inline-block;
+}
+
+/* =========================================
+   3. WHY SECTION 
+   ========================================= */
+.why-section {
+  background: #f1f5fb;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.why-section h2 {
+  color: #0b2239;
+}
+
+.why-section ul {
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  list-style: none;
+  text-align: left;
+}
+
+.why-section li {
+  margin-bottom: 0.8rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1c4d7a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* =========================================
+   4. SPLIT / ABOUT SECTION 
+   ========================================= */
 .split {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
+  padding: 4rem 0;
 }
 
 .split-text h3 {
@@ -114,6 +200,24 @@
 
 .split-text p {
   line-height: 1.7;
+  color: #444;
+}
+
+.title {
+  font-weight: 600;
+  color: #0b2239;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1c4d7a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
 }
 
 .split-images {
@@ -124,60 +228,50 @@
 .split-images img {
   width: 220px;
   border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* ABOUT TEXT IMPROVEMENT */
-.about {
+/* =========================================
+   5. CLOSING 
+   ========================================= */
+.closing {
   text-align: center;
-  padding-top: 0rem;
+  padding: 4rem 1rem;
+  background: white;
 }
 
-.about-text {
-  max-width: 900px;
-  margin: 50px;
-  font-size: 0.85rem;
-  line-height: 1.85;
-  color: #333;
-}
-
-.about-text p {
-  margin-bottom: 1.4rem;
-}
-
-
-/* FOOTER */
-.footer {
-  background: #ffffff;
-  padding: 3rem 0 2rem;
-  text-align: center;
-}
-
-/* TOP SEPARATOR */
-.footer-divider {
-  width: 92%;
-  max-width: 1100px;
-  height: 1px;
-  background: #e3e8ef;
-  margin: 0 auto 2rem auto;
-}
-
-/* LOGO ROW */
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+.closing h2 {
+  color: #0b2239;
   margin-bottom: 1rem;
 }
 
-/* LOGO SIZE */
-.footer-logos img {
-  height: 60px;
-  object-fit: contain;
+/* =========================================
+   6. RESPONSIVE BREAKPOINTS 
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero-split {
+    flex-direction: column;
+    height: auto; 
+    max-height: none;
+  }
+  .hero-left {
+    min-height: 400px;
+    flex: none;
+  }
+  .hero-right {
+    padding: 3rem 2rem;
+  }
 }
 
-/* TEXT */
-.footer-text {
-  font-size: 0.9rem;
-  color: #6b7a90;
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+    text-align: center;
+  }
+  .split-images {
+    justify-content: center;
+  }
+  .hero-topic {
+    font-size: 1.6rem;
+  }
 }

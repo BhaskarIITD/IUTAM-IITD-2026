@@ -1,54 +1,97 @@
+/* About.css */
 /* PAGE WRAPPER */
 .about-page {
   background: #f7f9fc;
-  padding-bottom: 4rem;
 }
 
-/* HEADER */
-.about-header {
+/* HERO */
+.about-hero {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(180deg, #ffffff, #f7f9fc);
 }
 
-.about-header h1 {
-  font-size: 2.4rem;
+.about-hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.25;
   color: #0b2239;
-  margin-bottom: 0.6rem;
-}
-
-.about-header h2 {
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: #1c4d7a;
   max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.4;
+  margin: auto;
 }
 
-/* CONTENT */
+.about-hero p {
+  margin-top: 0.8rem;
+  color: #1c4d7a;
+  font-weight: 500;
+}
+
+/* CONTENT LAYOUT */
 .about-content {
-  width: min(900px, 92%);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  width: min(1200px, 92%);
   margin: auto;
-  font-size: 1.08rem;
+  padding: 2.5rem 0 4rem;
+}
+
+/* TEXT */
+.about-text p {
+  font-size: 1.05rem;
   line-height: 1.85;
   color: #333;
+  margin-bottom: 1.4rem;
 }
 
-.about-content p {
-  margin-bottom: 1.6rem;
+/* HIGHLIGHTS */
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.highlight-card {
+  background: #ffffff;
+  padding: 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.highlight-card h4 {
+  margin-bottom: 0.6rem;
+  color: #0b2239;
+}
+
+.highlight-card ul {
+  padding-left: 1.1rem;
+}
+
+.highlight-card li {
+  margin-bottom: 0.4rem;
+}
+
+.highlight-card.accent {
+  background: #0b2239;
+  color: #ffffff;
+}
+
+.highlight-card.accent h4 {
+  color: #ffffff;
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .about-header h1 {
-    font-size: 2rem;
-  }
-
-  .about-header h2 {
-    font-size: 1.2rem;
-  }
-
+@media (max-width: 900px) {
   .about-content {
-    font-size: 1.02rem;
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 2.1rem;
   }
 }

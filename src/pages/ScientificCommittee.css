@@ -1,0 +1,82 @@
+/* ScientificCommittee.css */
+
+/* PAGE BACKGROUND */
+.committee-page {
+  background: #f7f9fc; /* Matches your site's overall theme */
+  min-height: 80vh;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* THE MAIN WHITE CARD */
+.committee-container {
+  background: #ffffff;
+  width: min(1000px, 100%);
+  padding: 3rem 4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* TITLE STYLING */
+.section-title {
+  font-size: 1.8rem;
+  color: #0b2239;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eef2f7; /* Adds the subtle separator line */
+}
+
+/* 2-COLUMN GRID SETUP */
+.committee-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates exactly 2 columns */
+  column-gap: 4rem;
+  row-gap: 2rem;
+}
+
+/* INDIVIDUAL MEMBER FORMATTING */
+.committee-member {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.member-name-role {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.member-role {
+  color: #3b5998; /* The distinct blue color for roles */
+  font-weight: 500;
+}
+
+.member-affiliation {
+  margin: 0;
+  color: #666666; /* Gray text for the institution details */
+  font-size: 0.95rem;
+}
+
+/* ANIMATION */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .committee-list {
+    grid-template-columns: 1fr; /* Stacks everything into 1 column on phones */
+    row-gap: 1.5rem;
+  }
+  
+  .committee-container {
+    padding: 2rem 1.5rem;
+  }
+}

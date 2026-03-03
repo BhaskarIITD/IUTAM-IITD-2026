@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# IUTAM Symposium 2026 - Official Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Currently, two official plugins are available:
+The official frontend web application for the **IUTAM Symposium 2026: Rate Dependent Mechanics and Multiscale Modelling of Materials**, organized by the Indian Institute of Technology (IIT) Delhi.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This platform serves as the central hub for global researchers, academics, and industry professionals to register, view schedules, and arrange travel for the symposium.
 
-## React Compiler
+## 🌟 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Automated Registration Workflow:** A custom registration form that captures participant details, categorizes fees (Student, Non-Student, Accompanying), and handles payment receipt uploads. Form submissions are securely routed through a **Microsoft Power Automate Webhook**.
+* **Integrated Payment Gateway:** Displays official IIT Delhi IRD Bank Mandate details alongside a scannable SBI UPI QR code for seamless delegate payments.
+* **Interactive Travel & Accommodation:** Features embedded, pinpointed Google Maps for campus navigation and an integrated Booking.com widget for real-time local hotel availability.
+* **Fully Responsive Design:** A clean, academic UI built with pure CSS, fully optimized for desktop, tablet, and mobile viewing.
+* **Dynamic Routing:** Utilizes `react-router-dom` for smooth, single-page application (SPA) navigation without page reloads.
 
-## Expanding the ESLint configuration
+## 🗺️ Site Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **`/` (Home):** Hero banner, symposium overview, chairs, important dates, and quick registration access.
+* **`/about`:** Detailed objectives and themes of the symposium.
+* **`/scientific-committee`:** List of global organizers and advisory board members.
+* **`/programme-details`:** Day-by-day event schedule (TBA).
+* **`/speakers`:** Keynote and invited speaker profiles.
+* **`/registration`:** Fee schedule, payment details, and the automated registration form.
+* **`/travel-and-accommodation`:** Airport/Metro transit guides and nearby hotel recommendations.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **Framework:** [React 18](https://reactjs.org/) (Vite)
+* **Routing:** [React Router v6](https://reactrouter.com/)
+* **Styling:** Custom Vanilla CSS (CSS Modules / Global Styles)
+* **Backend/Integration:** Microsoft Power Automate (for form handling and database population)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To run this project locally, follow these steps:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) (v16 or higher) installed on your machine.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/yourusername/iutam-symposium-2026.git](https://github.com/yourusername/iutam-symposium-2026.git)

@@ -1,0 +1,263 @@
+/* Registration.css */
+.registration-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 2rem 1rem 5rem;
+}
+
+.glass-card {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+/* PRE-FORM TEXT */
+.pre-form-info {
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.fee-note {
+  color: #333;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+/* FEE CARD */
+.fee-card h2 {
+  color: #0b2239;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.fee-section {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.fee-section.no-border {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.fee-section h3 {
+  font-size: 1.1rem;
+  color: #0b2239;
+  margin-bottom: 1rem;
+}
+
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.fee-label {
+  color: #1c4d7a;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+/* BANK CARD */
+.payment-details-card {
+  border-top: 5px solid #1c4d7a;
+}
+
+.payment-details-card h2 {
+  color: #0b2239;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.instruction-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.bank-info h3 {
+  color: #1c4d7a;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.bank-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.bank-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #f0f4f8;
+  color: #444;
+}
+
+.bank-table td:first-child {
+  color: #1c4d7a;
+  width: 160px;
+}
+
+/* FORM ELEMENTS */
+.page-header h1 {
+  font-size: 2.2rem;
+  color: #0b2239;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #555;
+}
+
+.form-section {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #1c4d7a;
+  font-size: 1.2rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #d1d9e6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  background: #fdfdfd;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #1c4d7a;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 1rem;
+}
+
+.helper {
+  font-size: 0.85rem;
+  color: #6b7a90;
+}
+
+.btn.primary {
+  width: 100%;
+  background: #1c4d7a;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #0b2239;
+}
+
+.btn.primary:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.redirect-note {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.payment-flex {
+  display: flex;
+  gap: 3rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+.bank-info {
+  flex: 1.4;
+}
+
+/* QR SECTION STYLING */
+.qr-section {
+  flex: 1;
+  background: #fdfdfd;
+  border: 1px dashed #d1d9e6;
+  border-radius: 12px;
+  padding: 2rem 1.5rem; /* Slightly increased padding for the larger code */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.qr-section h3 {
+  color: #1c4d7a;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.qr-box {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Slightly darker shadow */
+  margin-bottom: 1.5rem;
+}
+
+.qr-image {
+  width: 250px; /* Increased from 160px to make it much larger */
+  height: auto;
+  display: block;
+}
+
+.qr-helper {
+  color: #0b2239;
+  font-size: 1.1rem; /* Slightly larger text to match the new QR size */
+  margin-bottom: 0.4rem;
+}
+
+.qr-subtext {
+  color: #6b7a90;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .fee-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .glass-card {
+    padding: 1.5rem;
+  }
+  .payment-flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
